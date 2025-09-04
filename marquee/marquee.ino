@@ -128,7 +128,7 @@ enum loopState_e loopState, lastState;
 #define SCHEDULE_INTERVAL_START(_var,_delay) {_var=millis()-(_delay);}
 
 // Weather Client
-OpenWeatherMapClient weatherClient(owmApiKey, isMetric);
+OpenWeatherMapClient weatherClient(owmApiKey, isMetric, owmLanguage ,owmWindSpeed);
 
 #if COMPILE_MQTT
 // Mqtt Client
@@ -939,6 +939,8 @@ void handleSaveConfig() {
     isStaticDisplay = server.hasArg(F("statdisp"));
     isSysLed = server.hasArg(F("sysled"));
     isMetric = server.hasArg(F("metric"));
+    owmLanguage = server.hasArg(F("en"));
+    owmWindSpeed = server.hasArg(F("m/s"));
     marqueeMessage = server.arg(F("marqueeMsg"));
     quietTimeMode = server.arg(F("qtmode")).toInt();
     quietTimeDimlevel = server.arg(F("qtlvl")).toInt();

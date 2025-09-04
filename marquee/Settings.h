@@ -89,6 +89,7 @@ bool showHighLow = true;
 const int staticDisplayTime = 5000;    // Static display time per item, in ms
 bool isStaticDisplay = false;          // Static display above SHOW_* items
 bool isMetric = true;                  // false = Imperial and true = Metric
+bool owmWindSpeed = true;              // Set windspeed to false = kmp, true = m/s
 bool is24hour = true;                  // 24 hour clock is displayed, false = 12 hour clock (for configuration, 24h time is always used)
 bool isPmIndicator = true;             // Show PM indicator on Clock when in AM/PM mode
 bool isSysLed = true;                  // Flash onboard LED on system actions

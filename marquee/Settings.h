@@ -73,7 +73,6 @@ const int ledRotation = 3;        // Set ledRotation for LED Display panels, 0: 
 String owmApiKey = "";            // Your free API Key from http://openweathermap.org/ (registration required; use Free Access for everyone )
 String geoLocation = "London,UK"; // Default GEO Location (use http://openweathermap.org/find to find location name being "cityname,countrycode" or "city ID" or GPS "latitude,longitude")
 String marqueeMessage = "";
-String owmLanguage = "en";        // Languages supported https://openweathermap.org/current#multi
 
 // Default Weather Settings
 bool showTemperature = true;

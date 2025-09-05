@@ -700,7 +700,7 @@ void processEveryMinute() {
         }
       }
       if (showCity && !isStaticDisplay) {
-        msg += cleanText(weatherClient.getCity()) + "  ";  // ) (mats-nk) Convert non CP437 to CP437
+        msg += cleanText(weatherClient.getCity()) + "  ";    // (mats-nk) Convert non CP437 to CP437
       }
       if (showTemperature) {
         if (!isStaticDisplay) {
@@ -711,7 +711,7 @@ void processEveryMinute() {
         }
       }
 
-      //show high/low temperature
+      // Show high/low temperature
       if (showHighLow && !isStaticDisplay) {
         msg += F("High/Low:") + String(weatherClient.getTemperatureHigh(),0) + "/" + String(weatherClient.getTemperatureLow(),0) + "  ";
       }
@@ -760,7 +760,7 @@ void processEveryMinute() {
             staticDisplay[staticDisplayIdx] = mqttmsg;
             staticDisplayIdx++;
           } else {
-            // add mqtt message if there is one
+            // Add MQTT message if there is one
             msg += mqttmsg;
           }
         }
@@ -773,7 +773,6 @@ void processEveryMinute() {
           isStaticDisplayNew = true;
           staticDisplayIdxOut = 0;
         }
-
       }
       if ((msg.length() > 3) && !isQuietPeriodNoBlinkNoscroll) {
         displayScrollMessage(msg);

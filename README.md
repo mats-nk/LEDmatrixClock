@@ -1,6 +1,13 @@
 # LED Matrix Clock a.k.a. Marquee Scroller (Clock, Weather, and More)
 
+## Notice for Multilanguag support test branch `matsk`
+
+- Add `&lang=<country code>` after your API key in the web interface
+- This branch will convert non CP437 chars to CP437 chars for City name and weather description
+- For metric it will display wind speed in m/s as a test (will include option for choosing kmp later
+
 ## NOTICE
+
 This fork enhances the Qrome Marquee Scroller version 3.03 from february 2023, that was developed during 2018-2022 period.
 
 For more information and development history visit [Qrome Marquee Scroller](https://github.com/Qrome/marquee-scroller) and read his [README](https://github.com/Qrome/marquee-scroller/blob/master/README.md).

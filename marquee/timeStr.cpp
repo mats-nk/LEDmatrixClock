@@ -10,7 +10,7 @@
 #include "timeStr.h"
 
 String getDayName(int weekday) {
-  static const char daynames[] PROGMEM = "Söndag,Måndag,Tisdag,Onsdag,Torsdag,Fredag,Lördag,";
+  static const char daynames[] PROGMEM = "Söndag,Måndag,Tisdag,Onsdag,Torsdag,Fredag,Lördag,";   // (mats-nk) Swedish
   String retstr = "";
   String dayn = FPSTR(daynames);
   int begin = 0, end = 0;
@@ -27,7 +27,7 @@ String getDayName(int weekday) {
 }
 
 String getMonthName(int month) {
-  static const char monthnames[] PROGMEM = "Jan,Feb,Mar,Apr,May,Juni,Juli,Aug,Sep,Okt,Nov,Dec,";
+  static const char monthnames[] PROGMEM = "Jan,Feb,Mar,Apr,May,Juni,Juli,Aug,Sep,Okt,Nov,Dec,";   // (mats-nk) Swedish
   String retstr = "";
   String monn = FPSTR(monthnames);
   int begin = 0, end = 0;

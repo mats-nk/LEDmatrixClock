@@ -263,7 +263,7 @@ void OpenWeatherMapClient::updateWeather() {
 
 String OpenWeatherMapClient::getWindDirectionText() {
   int val = floor((weather.windDirection / 22.5) + 0.5);
-  String arr[] = {"N", "NNO", "NO", "ONO", "O", "OSO", "SO", "SSO", "S", "SSV", "SV", "VSV", "V", "VNV", "NV", "NNV"};
+  String arr[] = {"N", "NNO", "NO", "ONO", "O", "OSO", "SO", "SSO", "S", "SSV", "SV", "VSV", "V", "VNV", "NV", "NNV"};   // (mats-nk) Swedish
   return arr[(val % 16)];
 }
 

@@ -1,8 +1,7 @@
 /**
- * parts Copyright (c) 2018 David Payne
+ * Parts Copyright (c) 2018 David Payne
  * Copyright (c) 2025 rob040@users.github.com
  * This code is licensed under MIT license (see LICENSE.txt for details)
- *
  *
  * Change History:
  * 20250628 rob040   Completely changed this OWM client API and OWM access API to use the Free Service
@@ -263,7 +262,7 @@ void OpenWeatherMapClient::updateWeather() {
 
 String OpenWeatherMapClient::getWindDirectionText() {
   int val = floor((weather.windDirection / 22.5) + 0.5);
-  String arr[] = {"N", "NNO", "NO", "ONO", "O", "OSO", "SO", "SSO", "S", "SSV", "SV", "VSV", "V", "VNV", "NV", "NNV"};
+  String arr[] = {"N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"};
   return arr[(val % 16)];
 }
 

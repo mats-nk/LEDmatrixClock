@@ -6,7 +6,7 @@
 
 #include "Settings.h"
 
-#define VERSION "3.2.1"
+#define VERSION "3.2.1-mk"
 
 // Refresh main web page every x seconds. The mainpage has button to activate its auto-refresh
 #define WEBPAGE_AUTOREFRESH   30
@@ -682,7 +682,8 @@ void processEveryMinute() {
       String msg = " ";
       String temperature = String(weatherClient.getTemperature(),0);
       String weatherDescription = weatherClient.getWeatherDescription();
-      weatherDescription.toUpperCase();
+      weatherDescription[0] = toupper(weatherDescription[0]);  // (mats-nk) Convert first letter in description to capital letter
+
       staticDisplayIdx = 0;
 
       if (showDate) {

@@ -329,7 +329,7 @@ static const char webChangeForm2[] PROGMEM =
   "<fieldset><legend>Data Display settings</legend>"
   // title='Any selected Display Scrolling Data is shown in short form without movement (scroll) when fitting within display width.'
   "<p><input name='statdisp' class='w3-check' type='checkbox' %STATDISP_CB%> Do not scroll weather data display</p>"
-  "<p><input name='metric' class='w3-check' type='checkbox' %METRIC_CB%> Use Metric units (Celsius,kmh,mBar); Unchecked: use Imperial units (Farenheid,mph,inHg)</p>"
+  "<p><input name='metric' class='w3-check' type='checkbox' %METRIC_CB%> Use Metric units (Celsius,m/s,mBar); Unchecked: use Imperial units (Farenheid,mph,inHg)</p>"
   "<p><input name='is24hour' class='w3-check' type='checkbox' %24HR_CB%> Use 24 Hour Clock; Unchecked: use 12 Hour clock</p>"
   "<p><input name='isPM' class='w3-check' type='checkbox' %PM_CB%> Show PM indicator (only on 12 Hour clock)</p>"
   "<p><input name='flashseconds' class='w3-check' type='checkbox' %FLASH_CB%> Blink \":\" in the time</p>"
@@ -1381,7 +1381,7 @@ String getTempSymbol(bool forWeb) {
 }
 
 String getSpeedSymbol() {
-  return String((isMetric) ? "kmh" : "mph");
+  return String((isMetric) ? "m/s" : "mph");
 }
 
 String getPressureSymbol()

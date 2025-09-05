@@ -229,8 +229,8 @@ void OpenWeatherMapClient::updateWeather() {
   weather.isValid = true;
 
   if (isMetric) {
-    // convert m/s to kmh
-    weather.windSpeed *= 3.6;
+    // Convert m/s to kmh
+    // weather.windSpeed *= 3.6;
   } else {
     // Imperial mode
     // windspeed is already in mph

@@ -56,7 +56,7 @@ const int pinCS         = D6;     // Attach CS to this pin, DIN to MOSI and CLK 
 int displayIntensity    = 1;      // This can be set from 0 - 15
 int displayWidth        = 4;      // Default 4 for standard 4 x 1 display Max size of 16
 const int displayHeight = 1;      // Default 1 for a single row height (do not change, this SW does not support multiple lines, nor double hight chars)
-const int ledRotation   = 1;      // Set ledRotation for LED Display panels, 0: no rotation, 1: 90 degrees clockwise, 2: 180 degrees, 3: 90 degrees counter clockwise (default)
+const int ledRotation   = 3;      // Set ledRotation for LED Display panels, 0: no rotation, 1: 90 degrees clockwise, 2: 180 degrees, 3: 90 degrees counter clockwise (default)
 
 // Change the LED_ONBOARD to the pin you wish to use if other than the Built-in LED
 #define LED_ONBOARD  LED_BUILTIN  // LED_BUILTIN is the on-board LED on the ESP12E module on the Wemos

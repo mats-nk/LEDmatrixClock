@@ -27,7 +27,7 @@ String getDayName(int weekday) {
 }
 
 String getMonthName(int month) {
-  static const char daynames[] PROGMEM = "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,";
+  static const char monthnames[] PROGMEM = "Jan,Feb,Mar,Apr,May,June,July,Aug,Sep,Oct,Nov,Dec,";
   String retstr = "";
   String monn = FPSTR(monthnames);
   int begin = 0, end = 0;

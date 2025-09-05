@@ -700,7 +700,7 @@ void processEveryMinute() {
         }
       }
       if (showCity && !isStaticDisplay) {
-        msg += weatherClient.getCity() + "  ";
+        msg += cleanText(weatherClient.getCity()) + "  ";  // ) (mats-nk) Convert non CP437 to CP437
       }
       if (showTemperature) {
         if (!isStaticDisplay) {

@@ -75,9 +75,14 @@ const int ledRotation = 3;        // Set ledRotation for LED Display panels, 0: 
 String owmApiKey = "";            // Your free API Key from http://openweathermap.org/ (registration required; use Free Access for everyone )
 String geoLocation = "Breda,NL";  // Default GEO Location (use http://openweathermap.org/find to find location name being "cityname,countrycode" or "city ID" or GPS "latitude,longitude")
 String marqueeMessage = "";
-String owmLanguage = "nl";        // Set OpenWeatherMap API language for weather description (&lang=)
-bool owmWindspeed = false;        // (mats-nk) false = kmp, true = m/s. Only affects Metric
 
+// (mats-nk) Ideas to add to improve multilanguage support
+String owmLanguage = "nl";        // (mats-nk)  Set OpenWeatherMap API language for weather description (&lang=)
+bool owmWindspeed = false;        // (mats-nk) false = kmp, true = m/s. Only affects Metric
+//String Weekday[] = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};     // (mats-nk) Defined in "TimeStr.cpp"
+//static const char monthnames[] PROGMEM = "Jan,Feb,Mar,Apr,May,June,July,Aug,Sep,Oct,Nov,Dec,";   // (mats-nk) Defined in "TimeStr.cpp"
+//String arr[] = {"N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"};  // (mats-nk) Defined in "OpenWeatherMapClient.cpp"
+// Wind:
 // Default Weather Settings
 bool showTemperature = true;
 bool showDate = false;

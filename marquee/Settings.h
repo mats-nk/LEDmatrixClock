@@ -52,11 +52,11 @@
 // Wiring:    CLK -> D5 (SCK)  GPIO14 on ESP8266
 //            CS  -> D6        GPIO12 on ESP8266
 //            DIN -> D7 (MOSI) GPIO13 on ESP8266
-const int pinCS = D6;             // Attach CS to this pin, DIN to MOSI and CLK to SCK (cf http://arduino.cc/en/Reference/SPI )
-int displayIntensity = 1;         // This can be set from 0 - 15
-int displayWidth = 4;             // Default 4 for standard 4 x 1 display Max size of 16
+const int pinCS         = D6;     // Attach CS to this pin, DIN to MOSI and CLK to SCK (cf http://arduino.cc/en/Reference/SPI )
+int displayIntensity    = 1;      // This can be set from 0 - 15
+int displayWidth        = 4;      // Default 4 for standard 4 x 1 display Max size of 16
 const int displayHeight = 1;      // Default 1 for a single row height (do not change, this SW does not support multiple lines, nor double hight chars)
-const int ledRotation = 3;        // Set ledRotation for LED Display panels, 0: no rotation, 1: 90 degrees clockwise, 2: 180 degrees, 3: 90 degrees counter clockwise (default)
+const int ledRotation   = 1;      // Set ledRotation for LED Display panels, 0: no rotation, 1: 90 degrees clockwise, 2: 180 degrees, 3: 90 degrees counter clockwise (default)
 
 // Change the LED_ONBOARD to the pin you wish to use if other than the Built-in LED
 #define LED_ONBOARD  LED_BUILTIN  // LED_BUILTIN is the on-board LED on the ESP12E module on the Wemos
@@ -67,10 +67,10 @@ const int ledRotation = 3;        // Set ledRotation for LED Display panels, 0: 
 
 #define CONFIG "/conf.txt"        // Configuration file in local filesystem
 
-//******************************
-// Configuration default Settings
-// (No need to change; these can be set on configuration page)
-//******************************
+//********************************************************************
+// Default settings
+// (No need to change; many of these can be set in the Web interface)
+//********************************************************************
 
 String owmApiKey = "";            // Your free API Key from http://openweathermap.org/ (registration required; use Free Access for everyone )
 String geoLocation = "Breda,NL";  // Default GEO Location (use http://openweathermap.org/find to find location name being "cityname,countrycode" or "city ID" or GPS "latitude,longitude")

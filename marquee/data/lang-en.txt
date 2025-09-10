@@ -1,0 +1,15 @@
+Weekday[] = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+Month[] = {"Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"};
+owmWindDir[] = {"N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"};
+
+//   - High/Low Temperatures
+//   - Humidity
+//   - Wind
+//   - Pressure
+DisplayText[] = {"High", "Low", "Humidity", "Wind", "Pressure"};
+
+// https://en.wikipedia.org/wiki/List_of_date_formats_by_country
+DateFormat[] = {}; // YMD, DMY, MDY. ISO 8601 format YYYY-MM-DD
+
+
+

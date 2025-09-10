@@ -7,19 +7,12 @@
 #include "Settings.h"
 
 #define VERSION "3.2.1-mk"
-
-// Refresh main web page every x seconds. The mainpage has button to activate its auto-refresh
-#define WEBPAGE_AUTOREFRESH   30
-
-// DARK mode: Add button to main page to toggle webpage dark mode
-#define WEBPAGE_DARKMODE
-
-// matrix fillscreen clear color is 0
-#define CLEARSCREEN  0
+#define WEBPAGE_AUTOREFRESH   30       // Refresh main web page every x seconds. The mainpage has button to activate its auto-refresh
+#define WEBPAGE_DARKMODE               // DARK mode: Add button to main page to toggle webpage dark mode
+#define CLEARSCREEN  0                 // Matrix fillscreen clear color is 0
 
 
-// declaring local prototypes
-
+// Declaring local prototypes
 void setup();
 void loop();
 void displayScrollMessage(const String &msg);
@@ -68,10 +61,10 @@ String EncodeHtmlSpecialChars(const char *msg);
 String EncodeUrlSpecialChars(const char *msg);
 
 // LED font constants; the font is a 5x7 pixels in a 6x8 space
-const int font_space = 1;  // dots between letters
-const int font_width = 5 + font_space; // The font width is 5 pixels + font_space
+const int font_space = 1;                         // Dots between letters
+const int font_width = 5 + font_space;            // The font width is 5 pixels + font_space
 
-Max72xxPanel matrix = Max72xxPanel(pinCS, 0, 0); // will be re-instantiated later in setup()
+Max72xxPanel matrix = Max72xxPanel(pinCS, 0, 0);  // Will be re-instantiated later in setup()
 
 // Time
 int lastMinute;
@@ -100,9 +93,9 @@ int scrlPixIdx;
 int scrlPixY;
 int scrlMsgLen;
 unsigned long scrlPixelLastTime;
-String scrlMsg; // copy of scrolling message
+String scrlMsg;                        // Copy of scrolling message
 
-//Static data display
+// Static data display
 String staticDisplay[8];
 bool isStaticDisplayNew;
 bool isStaticDisplayBusy;
@@ -688,8 +681,8 @@ void processEveryMinute() {
 
       if (showDate) {
         if (!isStaticDisplay) {
-          msg += getDayName(weekday()) + ", ";
-          msg += getMonthName(month()) + " " + day() + "  ";
+          msg += cleanText(getDayName(weekday())) + ", ";                           // (mats-nk) Convert text to CP437
+          msg += cleanText(getMonthName(month())) + " " + day() + "  ";             // (mats-nk) Convert text to CP437
         } else {
           if (isMetric) {
             staticDisplay[staticDisplayIdx] = zeroPad(month()) + "-" + zeroPad(day());
@@ -839,7 +832,7 @@ void processEverySecond() {
         displayTime += " " + add;
         break;
     case WIDE_CLOCK_STYLE_HHMM_WWWDD:
-        String add = getDayName(weekday());
+        String add = cleanText(getDayName(weekday()));             // (mats-nk) Convert text to CP437
         if (displayWidth >= 10) {
           add.remove(3);
           add = " " + add + " ";
@@ -1264,10 +1257,10 @@ void webDisplayWeatherData() {
   String dtstr;
   if (is24hour) {
     // UK date+time presentation: MSB to LSB
-    dtstr = getDayName(weekday()) + ", " + String(year()) + " " + getMonthName(month()) + " " + day() + " " + zeroPad(hour()) + ":" + zeroPad(minute());
+    dtstr = cleanText(getDayName(weekday()) + ", " + String(year()) + " " + getMonthName(month()) + " " + day() + " " + zeroPad(hour()) + ":" + zeroPad(minute()));  // (mats-nk) Convert text to CP437
   } else {
     // US date+time presentation
-    dtstr = getDayName(weekday()) + ", " + getMonthName(month()) + " " + day() + ", " + hourFormat12() + ":" + zeroPad(minute()) + ", " + getAmPm(isPM());
+    dtstr = cleanText(getDayName(weekday()) + ", " + getMonthName(month()) + " " + day() + ", " + hourFormat12() + ":" + zeroPad(minute()) + ", " + getAmPm(isPM()));  // (mats-nk) Convert text to CP437
   }
 
   Serial.print(F("Main page update "));

@@ -1,0 +1,7 @@
+// Swedish
+Weekday[] = {"Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"};
+monthnames[] = "Jan,Feb,Mar,Apr,May,June,July,Aug,Sep,Oct,Nov,Dec,";
+owmWindDir[] = {"N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"};
+DisplayText[] = {"Hög", "Låg", "Fuktighet", "Vind", "Tryck"};
+DateFormat[] = {YYYY-MM-DD};  // https://en.wikipedia.org/wiki/List_of_date_formats_by_country
+

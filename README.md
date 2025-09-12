@@ -1,5 +1,7 @@
 # LED Matrix Clock a.k.a. Marquee Scroller (Clock, Weather, and More)
 
+The main feature for this MAX7219 LED dot matrix is to display time and weather for you. The project is based on the ESP8266 MCU and MAX7219 LED driver and featching time via NTP and weather from the Open Weather Map API.
+
 ## NOTICE
 This fork enhances the Qrome Marquee Scroller version 3.03 from february 2023, that was developed during 2018-2022 period.
 
@@ -100,8 +102,6 @@ Double Wide LED version: https://www.thingiverse.com/thing:2989552
   <img src="/images/20180128_091552.jpg" width="200"/>
   <img src="/images/20180127_135828.jpg" width="200"/>
 </p>
-
-
 
 ## Compiling and Loading to Wemos D1 Mini (ESP8266)
 ### Using Arduino 2.x IDE

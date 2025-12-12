@@ -4,23 +4,14 @@
  * This code is licensed under MIT license (see LICENSE.txt for details)
  */
 
-
 #include "Settings.h"
 
-#define VERSION "3.5.0"  // software version
+#define VERSION "3.5.0"            // Software version
+#define WEBPAGE_AUTOREFRESH   30   // Refresh main web page every x seconds. The mainpage has button to activate its auto-refresh
+#define WEBPAGE_DARKMODE           // DARK mode: Add button to main page to toggle webpage dark mode
+#define CLEARSCREEN  0             // matrix fillscreen clear color is 0
 
-// Refresh main web page every x seconds. The mainpage has button to activate its auto-refresh
-#define WEBPAGE_AUTOREFRESH   30
-
-// DARK mode: Add button to main page to toggle webpage dark mode
-#define WEBPAGE_DARKMODE
-
-// matrix fillscreen clear color is 0
-#define CLEARSCREEN  0
-
-
-// declaring local prototypes
-
+// Declaring local prototypes
 void setup();
 void loop();
 void displayScrollMessage(const String &msg);
@@ -87,10 +78,10 @@ String EncodeHtmlSpecialChars(const char *msg);
 String EncodeUrlSpecialChars(const char *msg);
 
 // LED font constants; the font is a 5x7 (actually 5x8) pixels in a 6x8 space
-const int font_space = 1;  // dots between letters
-const int font_width = 5 + font_space; // The font width is 5 pixels + font_space
-int displayWidthChars; // number of characters that fit on display; will be set later according to number of cascaded modules
-bool isUsImperial; // USA Imperial date format is determined from configuration: lang=EN & clock=12h & temp=F
+const int font_space = 1;               // Dots between letters
+const int font_width = 5 + font_space;  // The font width is 5 pixels + font_space
+int displayWidthChars;                  // Number of characters that fit on display; will be set later according to number of cascaded modules
+bool isUsImperial;                      // USA Imperial date format is determined from configuration: lang=EN & clock=12h & temp=F
 
 // Matrix display object
 Max72xxPanel matrix = Max72xxPanel(pinCS, 0, 0); // will be re-instantiated later in setup()
@@ -125,10 +116,10 @@ int scrlPixIdx;
 int scrlPixY;
 int scrlMsgLen;
 unsigned long scrlPixelLastTime;
-String scrlMsg; // copy of scrolling message
+String scrlMsg;            // Copy of scrolling message
 
-//Static data display
-String staticDisplay[8]; // allocate enough space for n messages, count # of staticDisplayIdx++ is code below. No runtime check!
+// Static data display
+String staticDisplay[8];   // Allocate enough space for n messages, count # of staticDisplayIdx++ is code below. No runtime check!
 bool isStaticDisplayNew;
 bool isStaticDisplayBusy;
 int staticDisplayIdx;
@@ -764,7 +755,7 @@ void processEveryMinute()
        ((uint32_t)now() > TIME_VALID_MIN) &&
        ((uint32_t)now() - lastMqttStatusPubTimestamp) >= 60*60 )
     {
-      // publish status at least every hour, when everything else is stable
+      // Publish status at least every hour, when everything else is stable
       if (publishMqttStatus()) {
         Serial.println(F("MQTT status published"));
         lastMqttStatusPubTimestamp = now();
@@ -776,7 +767,8 @@ void processEveryMinute()
       String msg = " ";
       String temperature = getTemperature();
       String weatherDescription = weatherClient.getWeatherDescription();
-      weatherDescription.toUpperCase();
+      weatherDescription[0] = toupper(weatherDescription[0]);     // (mats-nk) Convert first letter in description to capital letter
+
       staticDisplayIdx = 0;
 
       if (showDate) {
